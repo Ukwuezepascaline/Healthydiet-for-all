@@ -16,7 +16,7 @@ function LoginPage() {
             <div className="mt-10 ">
               <form className=" items-center justify-center flex ">
                 <div>
-                  <h2 className="hidden md:flex  text-2xl capitalize ml-5 mb-4 font-poppins font-extrabold">
+                  <h2 className="md:flex  text-2xl capitalize md:ml-5 mb-4 font-poppins font-extrabold">
                   Welcome Back
                   </h2>
                   <h2 className="text-left font-semibold  text-lg md:text-[20px] mt-6">
