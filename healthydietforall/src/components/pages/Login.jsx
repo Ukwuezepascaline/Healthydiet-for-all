@@ -5,7 +5,7 @@ import googleicon from '../../assets/images/google.png';
 import fbicon from '../../assets/images/facebook.png';
 
 
-function LoginPage() {
+const LoginPage = () => {
     return (
       <div className=" ">
         <div className=" mt-20 md:mt-0 flex flex-row items-center justify-center  ">

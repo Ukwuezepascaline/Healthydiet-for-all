@@ -1,17 +1,30 @@
-import { Routes, Route } from "react-router-dom";
-import LoginPage from "./components/pages/LoginPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LoginPage from "./components/pages/Login";
 import AboutusPage from "./components/pages/Aboutus";
 import './App.css';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+    
+      children: [
+        {
+          path: "/",
+          element: <LoginPage />,
+        },
+        // other pages....
+        {
+          path: "/about",
+          element: <AboutusPage />,
+        },
+       
+      ],
+    },
+  ])
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/" element={<AboutusPage />} />
-      </Routes>
-    </>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
 export default App

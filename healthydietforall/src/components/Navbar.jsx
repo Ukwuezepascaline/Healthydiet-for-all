@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import  styles from './NavbarStyle.css';
 
-function NavbarSection() {
+const NavbarSection = () => {
     // adding the states 
     const [isActive, setIsActive] = useState(false);
     //add the active class
