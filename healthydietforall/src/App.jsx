@@ -14,7 +14,7 @@ function App() {
         },
         // other pages....
         {
-          path: "/about",
+          path: "/Aboutus",
           element: <AboutusPage />,
         },
        

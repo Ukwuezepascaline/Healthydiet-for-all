@@ -44,5 +44,5 @@ const NavbarSection = () => {
   }
 
   
-  export default NavbarSection;
+export default NavbarSection;
   

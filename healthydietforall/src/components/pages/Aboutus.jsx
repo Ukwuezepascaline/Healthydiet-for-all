@@ -1,9 +1,9 @@
-import Navbar from "../Navbar";
+// import NavbarSection from "../Navbar";
 
 const AboutusPage = () => {
     return (
         <>
-        <Navbar />
+        {/* <NavbarSection /> */}
         <h1>About Our Company</h1>
         </>
     );
