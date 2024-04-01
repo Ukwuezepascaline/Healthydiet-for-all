@@ -53,7 +53,7 @@ function SignUp() {
             </button>
             <p className=" text-center mt-3 text-slate-500 md:text-black text-lg  font-medium mb-2">
               Alrealdy have an account?{" "}
-              <span className="text-red-500 cursor-pointer"> Log In</span> <br />
+              <span className="text-blue-500 cursor-pointer"> Log In</span> <br />
               or <br /> Sign Up with
             </p>
             <div className="socials flex items-center justify-evenly mb-10 md:justify-center ">
