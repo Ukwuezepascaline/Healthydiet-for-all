@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import LoginPage from "./components/pages/LoginPage";
 import SignUp from "./components/pages/SignUp";
 import Services from "./components/pages/OurServices";
+import ServicePage from "./components/pages/ServicePage";
 import ResetPassword from "./components/pages/ResetPassword";
 import './App.css';
 
@@ -24,6 +25,11 @@ function App() {
         {
           path: "/services",
           element: <Services />,
+        },
+
+        {
+          path: "/servicePage",
+          element: <ServicePage />,
         },
 
         {
