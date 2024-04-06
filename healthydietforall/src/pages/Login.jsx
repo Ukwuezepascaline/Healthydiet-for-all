@@ -35,7 +35,9 @@ const LoginPage = () => {
                     type="text"
                     name="email"
                   />
+
                   <h4 className="text-start  text-lg  font-medium cursor-pointer mt-2 text-primary">
+
                     Forgotten password?
                   </h4>
                 </div>
