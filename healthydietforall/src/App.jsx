@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import LoginPage from "./components/pages/LoginPage";
 import SignUp from "./components/pages/SignUp";
+import AboutusPage from "./components/pages/Aboutus";
 import Services from "./components/pages/OurServices";
 import ServicePage from "./components/pages/ServicePage";
 import ResetPassword from "./components/pages/ResetPassword";
@@ -20,6 +21,11 @@ function App() {
         {
           path: "/signUp",
           element: <SignUp />,
+        },
+
+        {
+          path: "/aboutus",
+          element: <AboutusPage />,
         },
 
         {
