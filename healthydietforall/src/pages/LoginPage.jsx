@@ -5,7 +5,7 @@ import googleicon from '../../assets/images/google.png';
 import fbicon from '../../assets/images/facebook.png';
 
 
-const LoginPage = () => {
+function LoginPage() {
     return (
       <div className=" ">
         <div className=" mt-20 md:mt-0 flex flex-row items-center justify-center  ">
@@ -16,7 +16,7 @@ const LoginPage = () => {
             <div className="mt-10 ">
               <form className=" items-center justify-center flex ">
                 <div>
-                  <h2 className="md:flex  text-2xl capitalize md:ml-5 mb-4 font-poppins font-extrabold">
+                  <h2 className="hidden md:flex  text-2xl capitalize ml-5 mb-4 font-poppins font-extrabold">
                   Welcome Back
                   </h2>
                   <h2 className="text-left font-semibold  text-lg md:text-[20px] mt-6">
@@ -35,9 +35,7 @@ const LoginPage = () => {
                     type="text"
                     name="email"
                   />
-
                   <h4 className="text-start  text-lg  font-medium cursor-pointer mt-2 text-primary">
-
                     Forgotten password?
                   </h4>
                 </div>
@@ -48,7 +46,7 @@ const LoginPage = () => {
             </button>
             <p className=" text-center mt-3 text-slate-500 md:text-black text-lg  font-medium mb-2">
               Dont have an account?{" "}
-              <span className="text-red-500 cursor-pointer"> Signup</span> <br />
+              <span className="text-blue-500 cursor-pointer"> Signup</span> <br />
               or continue with
             </p>
             <div className="socials flex items-center justify-evenly mb-10 md:justify-center ">
