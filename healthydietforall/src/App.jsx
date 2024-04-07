@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./components/pages/Login";
 import AboutusPage from "./components/pages/Aboutus";
+import BlogPage from "./components/pages/Blog";
 import './App.css';
 
 function App() {
@@ -16,6 +17,10 @@ function App() {
         {
           path: "/Aboutus",
           element: <AboutusPage />,
+        },
+        {
+          path: "/Blog",
+          element: <BlogPage />,
         },
        
       ],
