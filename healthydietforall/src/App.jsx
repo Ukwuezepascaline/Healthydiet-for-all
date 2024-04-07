@@ -1,55 +1,64 @@
+import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
+// import AboutusPage from "./pages/aboutUs";
+import Services from "./pages/OurServices";
+import ServicePage from "./pages/ServicePage";
+import ResetPassword from "./pages/ResetPassword";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import LoginPage from "./components/pages/LoginPage";
-import SignUp from "./components/pages/SignUp";
-import AboutusPage from "./components/pages/Aboutus";
-import Services from "./components/pages/OurServices";
-import ServicePage from "./components/pages/ServicePage";
-import ResetPassword from "./components/pages/ResetPassword";
-
-import './App.css';
-
-function App() {
-  const router = createBrowserRouter([
-    {
-    
-      children: [
-        {
-          path: "/",
-          element: <LoginPage />,
-        },
-        
-        {
-          path: "/signUp",
-          element: <SignUp />,
-        },
-
-        {
-          path: "/aboutus",
-          element: <AboutusPage />,
-        },
-
-        {
-          path: "/services",
-          element: <Services />,
-        },
-
-        {
-          path: "/servicePage",
-          element: <ServicePage />,
-        },
-
-        {
-          path: "/resetPassword",
-          element: <ResetPassword />,
-        },
-      ],
-    },
-  ])
-
+const App = () => {
   return (
-    <RouterProvider router={router} />
-  )
-}
+    <main>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signUp" element={<SignUp />} />
+        {/* <Route path="/aboutUs" element={<AboutusPage />} /> */}
+        <Route path="/services" element={<Services />} />
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
+      </Routes>
+    </main>
+  );
+};
 
-export default App
+// function App() {
+//   const router = createBrowserRouter([
+//     {
+//       children: [
+//         {
+//           path: "/",
+//           element: <LoginPage />,
+//         },
+
+//         {
+//           path: "/signUp",
+//           element: <SignUp />,
+//         },
+
+//         {
+//           path: "/aboutus",
+//           element: <AboutusPage />,
+//         },
+
+//         {
+//           path: "/services",
+//           element: <Services />,
+//         },
+
+//         {
+//           path: "/servicePage",
+//           element: <ServicePage />,
+//         },
+
+//         {
+//           path: "/resetPassword",
+//           element: <ResetPassword />,
+//         },
+//       ],
+//     },
+//   ]);
+//   return <RouterProvider router={router} />;
+// }
+
+export default App;
