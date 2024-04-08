@@ -7,6 +7,7 @@ import ResetPassword from "./pages/ResetPassword";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
+
 const App = () => {
   return (
     <main>
@@ -22,43 +23,5 @@ const App = () => {
   );
 };
 
-// function App() {
-//   const router = createBrowserRouter([
-//     {
-//       children: [
-//         {
-//           path: "/",
-//           element: <LoginPage />,
-//         },
-
-//         {
-//           path: "/signUp",
-//           element: <SignUp />,
-//         },
-
-//         {
-//           path: "/aboutus",
-//           element: <AboutusPage />,
-//         },
-
-//         {
-//           path: "/services",
-//           element: <Services />,
-//         },
-
-//         {
-//           path: "/servicePage",
-//           element: <ServicePage />,
-//         },
-
-//         {
-//           path: "/resetPassword",
-//           element: <ResetPassword />,
-//         },
-//       ],
-//     },
-//   ]);
-//   return <RouterProvider router={router} />;
-// }
 
 export default App;
