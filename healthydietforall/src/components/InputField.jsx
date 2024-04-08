@@ -29,7 +29,7 @@ const InputField = ({
       <label className="text-left font-semibold  text-lg md:text-[20px] mt-6">
         {label}
       </label>
-      <div className="relative">
+      <div className="relative w-[310px]">
         <input
           required={required}
           className="w-[310px] border rounded-xl md:rounded-md border-slate-600 md:text-black h-12 text-xl pl-3"
@@ -42,7 +42,7 @@ const InputField = ({
         />
         {inputType === "password" && (
           <button
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+            className="absolute top-1/2 right-[4px] transform -translate-y-1/2 text-gray-500"
             onClick={toggleShowPassword}
             tabIndex={-1}
             type="button"
