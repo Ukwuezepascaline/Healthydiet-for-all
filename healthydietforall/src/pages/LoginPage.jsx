@@ -30,28 +30,31 @@ function LoginPage() {
     const { email, password } = loginDetails;
     setSubmitting(true);
 
-    await toast.promise(
-      // eslint-disable-next-line no-async-promise-executor
-      new Promise(async (resolve, reject) => {
-        const { user, accessToken } = await login(email, password);
-        if (user && accessToken) {
-          afterAccountCreationt();
-          resolve();
-        } else {
-          afterAccountCreationt();
-          reject();
-        }
-      }),
-      {
-        pending: "Logging in",
-        success:
-          "Account successfully created 👌\nCheck your email to verify your account",
-        error: "Encountered error 🤯",
+    const toastId = toast.loading("Logging in");
+
+    try {
+      const { user, accessToken } = await login(email, password);
+      if (user && accessToken) {
+        afterAccountCreation();
+        toast.update(toastId, {
+          render: "Logged in successfully 👌",
+          type: "success",
+          isLoading: false,
+          autoClose: 5000,
+        });
       }
-    );
+    } catch (e) {
+      toast.update(toastId, {
+        render: `${e.message} 🤯`,
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+      afterAccountCreation();
+    }
   };
 
-  const afterAccountCreationt = () => {
+  const afterAccountCreation = () => {
     setSubmitting(false);
     setLoginDetails({
       email: "",

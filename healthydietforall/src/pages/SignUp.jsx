@@ -2,11 +2,12 @@ import "../index.css";
 import Logo from "../assets/images/logo.png";
 import googleicon from "../assets/images/google.png";
 import fbicon from "../assets/images/facebook.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { createAccount } from "../services/backend.services";
+import { validatePassword } from "../utils";
 
 function SignUp() {
   const [accountDetails, setAccountDetails] = useState({
@@ -15,8 +16,11 @@ function SignUp() {
     password: "",
     passwordConfirmation: "",
   });
+  const [isStrongPassword, setIsStrongPassword] = useState(false);
+  const [message, setMessage] = useState("");
 
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -24,6 +28,11 @@ function SignUp() {
       ...prevDetails,
       [name]: value,
     }));
+    if (name === "password" && value.trim().length >= 8) {
+      const { strongPassword, message } = validatePassword(value);
+      setIsStrongPassword(strongPassword);
+      setMessage(message);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -32,31 +41,37 @@ function SignUp() {
     const { fullName, email, password, passwordConfirmation } = accountDetails;
     if (password !== passwordConfirmation) {
       toast.error("Passwords do not match");
+      return;
     }
     setSubmitting(true);
 
-    await toast.promise(
-      // eslint-disable-next-line no-async-promise-executor
-      new Promise(async (resolve, reject) => {
-        const status = await createAccount(fullName, email, password);
-        if (status == 201) {
-          afterAccountCreationt();
-          resolve();
-        } else {
-          afterAccountCreationt();
-          reject();
-        }
-      }),
-      {
-        pending: "Creating your account",
-        success:
-          "Account successfully created 👌\nCheck your email to verify your account",
-        error: "Encountered error 🤯",
+    const toastId = toast.loading("Creating your account...");
+
+    try {
+      const response = await createAccount(fullName, email, password);
+      if (response && response.status == 201) {
+        toast.update(toastId, {
+          render:
+            "Account successfully created 👌\nCheck your email to verify your account",
+          type: "success",
+          isLoading: false,
+          autoClose: 5000,
+        });
+        navigate("/");
+        afterAccountCreation();
       }
-    );
+    } catch (e) {
+      toast.update(toastId, {
+        render: `${e.message} 🤯`,
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+      });
+      afterAccountCreation();
+    }
   };
 
-  const afterAccountCreationt = () => {
+  const afterAccountCreation = () => {
     setSubmitting(false);
     setAccountDetails({
       fullName: "",
@@ -115,8 +130,12 @@ function SignUp() {
                   value={accountDetails.password}
                   isPassword={true}
                 />
+                {!isStrongPassword &&
+                  accountDetails.password.trim().length !== 0 && (
+                    <p>{message}</p>
+                  )}
                 <InputField
-                  label="ComfirmPassword"
+                  label="Comfirm Password"
                   name="passwordConfirmation"
                   placeholder="Password"
                   inputType="password"
@@ -129,6 +148,7 @@ function SignUp() {
               <button
                 className="Login bg-primaryOrange items-center justify-center w-[310px] h-14 flex mx-auto rounded-xl text-white font-bold text-xl mt-3"
                 type="submit"
+                disabled={submitting}
               >
                 {submitting ? "Signing up" : "Sign up"}
               </button>
