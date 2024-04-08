@@ -158,7 +158,7 @@ function SignUp() {
           <p className=" text-center mt-3 text-slate-500 md:text-black text-lg  font-medium mb-2">
             Alrealdy have an account?{" "}
             <span className="text-blue-500 cursor-pointer">
-              <Link to={"/"}>Log In</Link>
+              <Link to={"/login"}>Log In</Link>
             </span>{" "}
             <br />
             or <br /> Sign Up with
