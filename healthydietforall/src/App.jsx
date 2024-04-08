@@ -1,35 +1,27 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage from "./components/pages/Login";
-import AboutusPage from "./components/pages/Aboutus";
-import BlogPage from "./components/pages/Blog";
-import './App.css';
+import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
+// import AboutusPage from "./pages/aboutUs";
+import Services from "./pages/OurServices";
+import ServicePage from "./pages/ServicePage";
+import ResetPassword from "./pages/ResetPassword";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
-  const router = createBrowserRouter([
-    {
-    
-      children: [
-        {
-          path: "/",
-          element: <LoginPage />,
-        },
-        // other pages....
-        {
-          path: "/Aboutus",
-          element: <AboutusPage />,
-        },
-        {
-          path: "/Blog",
-          element: <BlogPage />,
-        },
-       
-      ],
-    },
-  ])
 
+const App = () => {
   return (
-    <RouterProvider router={router} />
-  )
-}
+    <main>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signUp" element={<SignUp />} />
+        {/* <Route path="/aboutUs" element={<AboutusPage />} /> */}
+        <Route path="/services" element={<Services />} />
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
+      </Routes>
+    </main>
+  );
+};
 
-export default App
+
+export default App;
