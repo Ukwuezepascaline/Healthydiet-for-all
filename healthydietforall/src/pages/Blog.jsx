@@ -1,6 +1,5 @@
 import "../index.css";
 import Logo from "../assets/images/logo.png";
-import Profileicon from "../assets/images/profileicon.svg";
 import Berriesicon from "../assets/images/berriesicon.png";
 import Spicesoclock from "../assets/images/spices_o_clock.png";
 import Bgimage from "../assets/images/bgimage.png";
@@ -8,24 +7,6 @@ import Bgimage from "../assets/images/bgimage.png";
 const BlogPage = () => {
   return (
     <div>
-      <div className="h-400 flex space-x-20 rounded-full border-2 border-gray-100 mb-16 ml-10 mr-10 ">
-        <img
-          src={Logo}
-          className="w-custom pl-10 pt-4 pb-4"
-          alt="healthydiet_logo"
-        />
-        <nav className="">
-          <ul className="flex pt-10 space-x-14 font-semibold">
-            <li className="pl-28">Home</li>
-            <li>About Us</li>
-            <li>Our Services</li>
-            <li>Blog</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-        <img src={Profileicon} className="pl-0 w-16 " alt="profile_icon" />
-      </div>
-
       <div className="w-full bg-primaryGreen mb-2">
         <div className="max-w-4">
           <img
