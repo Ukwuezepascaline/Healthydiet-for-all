@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "../index.css";
 import Logo from "../assets/images/logo.png";
-import Profileicon from "../assets/images/profileicon.svg";
+// import Profileicon from "../assets/images/profileicon.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
           <NavItem item={item} key={index} />
         ))}
       </div>
-      <img src={Profileicon} className="pl-0 w-16 " alt="profile_icon" />
+      {/* <img src={Profileicon} className="pl-0 w-16 " alt="profile_icon" /> */}
     </div>
   );
 };
@@ -31,8 +31,10 @@ const navItems = [
   { title: "Home", link: "/" },
   { title: "About Us", link: "/aboutUs" },
   { title: "Our Services", link: "/services" },
-  { title: "Blog", link: "blogs" },
-  { title: "Contact", link: "contactUs" },
+  { title: "Blog", link: "/blogs" },
+  { title: "Contact", link: "/contactUs" },
+  { title: "Sign Up", link: "/signUP" },
+  { title: "Create Blog", link: "/create-blog" },
 ];
 
 const NavItem = ({ item }) => {
