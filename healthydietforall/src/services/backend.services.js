@@ -18,10 +18,9 @@ const createAccount = async (fullName, email, password) => {
 
   try {
     const response = await axios.request(config);
-    return Promise.resolve(response.status);
+    return response;
   } catch (e) {
-    console.log(e.message);
-    return Promise.reject(e);
+    throw new Error(e.response.data.message);
   }
 };
 
@@ -38,10 +37,9 @@ const login = async (email, password) => {
 
   try {
     const response = await axios.request(config);
-    return Promise.resolve(response.data);
+    return response.data;
   } catch (e) {
-    console.log(e.message);
-    return Promise.reject(e.response.data.message);
+    throw new Error(e.response.data.message);
   }
 };
 
