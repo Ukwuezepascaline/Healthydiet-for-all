@@ -7,6 +7,9 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import { toast } from "react-toastify";
 import { login } from "../services/backend.services";
+import { useNavigate } from "react-router-dom";
+import { userActions } from "../context/slices/user.slice";
+import { useDispatch } from "react-redux";
 
 function LoginPage() {
   const [loginDetails, setLoginDetails] = useState({
@@ -15,6 +18,10 @@ function LoginPage() {
   });
 
   const [submitting, setSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  const { setUserData } = userActions;
 
   const handleChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -22,6 +29,11 @@ function LoginPage() {
       ...prevDetails,
       [name]: value,
     }));
+  };
+
+  const onLogin = (accesToken, user) => {
+    sessionStorage.setItem("accessToken", accesToken);
+    sessionStorage.setItem("user", JSON.stringify(user));
   };
 
   const handleSubmit = async (e) => {
@@ -35,6 +47,10 @@ function LoginPage() {
     try {
       const { user, accessToken } = await login(email, password);
       if (user && accessToken) {
+        console.log(user, accessToken);
+        navigate("/");
+        dispatch(setUserData(user));
+        onLogin(accessToken, user);
         afterAccountCreation();
         toast.update(toastId, {
           render: "Logged in successfully 👌",
@@ -113,7 +129,7 @@ function LoginPage() {
           <p className=" text-center mt-3 text-slate-500 md:text-black text-lg  font-medium mb-2">
             Dont have an account?{" "}
             <span className="text-blue-500 cursor-pointer">
-              <Link to={"/signUp"}>Sign Up</Link>
+              <Link to={"/sign-up"}>Sign Up</Link>
             </span>{" "}
             <br />
             or continue with
