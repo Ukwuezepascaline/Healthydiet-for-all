@@ -9,14 +9,14 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./components/Navbar1";
+import Navbar from "./components/Navbar";
 import CreateBlog from "./pages/CreateBlog";
 import HomePage from "./pages/Home";
-
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <main>
+    <main className="">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -29,6 +29,7 @@ const App = () => {
         <Route path="/create-blog" element={<CreateBlog />} />
         <Route path="/blogs" element={<BlogPage />} />
       </Routes>
+      <Footer />
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
