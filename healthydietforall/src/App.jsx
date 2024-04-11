@@ -11,13 +11,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar1";
 import CreateBlog from "./pages/CreateBlog";
+import HomePage from "./pages/Home";
+
 
 const App = () => {
   return (
     <main>
       <Navbar />
       <Routes>
-        <Route path="/" element={<BlogPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/aboutUs" element={<AboutusPage />} />
@@ -25,6 +27,7 @@ const App = () => {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/create-blog" element={<CreateBlog />} />
+        <Route path="/blogs" element={<BlogPage />} />
       </Routes>
       <ToastContainer
         position="bottom-center"

@@ -28,7 +28,7 @@ const Navbar = () => {
 export default Navbar;
 
 const navItems = [
-  { title: "Home", link: "/" },
+
   { title: "About Us", link: "/aboutUs" },
   { title: "Our Services", link: "/services" },
   { title: "Blog", link: "/blogs" },
