@@ -20,7 +20,7 @@ const HomePage = () => {
         </div>
 
         <div id="text" className="text-right pt-16 pr-12 ml-auto">
-          <h3 className="text-5xl font-bold leading-12 ">
+          <h3 className="text-5xl font-bold leading-12">
             Personalized nutrition, <br />
             at your finger tips
           </h3>
