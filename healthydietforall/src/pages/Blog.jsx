@@ -3,8 +3,22 @@ import Logo from "../assets/images/logo.png";
 import Berriesicon from "../assets/images/berriesicon.png";
 import Spicesoclock from "../assets/images/spices_o_clock.png";
 import Bgimage from "../assets/images/bgimage.png";
+import { useEffect } from "react";
+import { fetchBlogs } from "../services/backend.services";
 
 const BlogPage = () => {
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        const response = await fetchBlogs();
+        console.log(response);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    getBlogs();
+  }, []);
+
   return (
     <div>
       <div className="w-full bg-primaryGreen mb-2">
@@ -46,10 +60,7 @@ const BlogPage = () => {
           Recent Posts
         </h2>
         <div id="first_two_cards" className="flex">
-          <div
-            id="left_card"
-            className="flex rounded-md ml-12        shadow-lg"
-          >
+          <div id="left_card" className="flex rounded-md ml-12 shadow-lg">
             <img
               src={Spicesoclock}
               alt="left_image"

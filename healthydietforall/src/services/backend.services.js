@@ -64,4 +64,67 @@ const logout = async () => {
   }
 };
 
-export { createAccount, login, logout };
+const createBlog = async (blogInput) => {
+  const url = `${baseUrl}/blogs/create`;
+
+  const config = {
+    method: "POST",
+    url,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+    },
+    data: blogInput,
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response.status;
+  } catch (e) {
+    throw new Error(e.response.data.message);
+  }
+};
+
+const updateBlog = async (blogId, blogInput) => {
+  const url = `${baseUrl}/blogs/update/${blogId}`;
+
+  const config = {
+    method: "PUT",
+    url,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+    },
+    data: blogInput,
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response.status;
+  } catch (e) {
+    throw new Error(e.response.data.message);
+  }
+};
+
+const fetchBlogs = async () => {
+  const url = `${baseUrl}/blogs`;
+
+  const config = {
+    method: "GET",
+    url,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+    },
+  };
+
+  try {
+    const response = await axios.request(config);
+    console.log(response);
+    return response;
+  } catch (e) {
+    throw new Error(e.response.data.message);
+  }
+};
+
+export { createAccount, login, logout, createBlog, updateBlog, fetchBlogs };
