@@ -63,9 +63,9 @@ const HomePage = () => {
                  </div>
                  <div className="flex pl-12 ml-auto pb-4 ">
                     <div className="bg-primaryGreen rounded-tl-xl rounded-bl-xl text-white text-5xl"> 
-                    <p className=" border-8 border-white rounded-full w-24 h-24 ml-12 mr-12 mt-10 px-4 py-4">3</p>
+                    <p className=" border-8 border-white rounded-full w-24 h-24 ml-12 mr-14 mt-10 px-4 py-4">3</p>
                     </div>
-                 <div className="bg-white flex gap-52 pl-4 rounded-tr-xl rounded-br-xl">
+                 <div className="bg-white flex gap-48 pl-4 rounded-tr-xl rounded-br-xl">
                  <div className="text-left ">
                         <h2 className="text-4xl pt-12">Make Sustainable Changes</h2>
                         <p className="pt-4"> With our Dietician's help, learn to adopt healthy habits and make lasting changes.</p>
