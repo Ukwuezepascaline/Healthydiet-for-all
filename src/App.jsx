@@ -9,37 +9,23 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar1";
 import CreateBlog from "./pages/CreateBlog";
-import HomePage from "./pages/Home";
-import ContactPage from "./pages/ContactPage";
-
-
-import SingleBlogPage from "./pages/SingleBlog";
-
-
-import Footer from "./components/Footer";
-
 
 const App = () => {
   return (
-    <main className="">
+    <main>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<BlogPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/about-us" element={<AboutusPage />} />
-         <Route path="/contact-us" element={<ContactPage />} /> 
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/aboutUs" element={<AboutusPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/service" element={<ServicePage />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/create-blog" element={<CreateBlog />} />
-        <Route path="/blogs" element={<BlogPage />} />
-        <Route path="/single-blog" element={<SingleBlogPage />} />
-
       </Routes>
-      <Footer />
       <ToastContainer
         position="bottom-center"
         autoClose={5000}

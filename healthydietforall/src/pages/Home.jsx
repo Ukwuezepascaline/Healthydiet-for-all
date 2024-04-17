@@ -18,6 +18,8 @@ const HomePage = () => {
             alt="food bowl"
           />
         </div>
+        </div>
+
 
         <div id="text" className="text-right pt-16 pr-12 ml-auto">
           <h3 className="text-5xl font-bold leading-12">
@@ -36,11 +38,11 @@ const HomePage = () => {
             Get Started
           </button>
         </div>
-      </div>
+     
 
 
-                </div>
-                 </div>
+                
+                 
                  <div className="flex pl-12 ml-auto pb-4 ">
                     <div className="bg-primaryGreen rounded-tl-xl rounded-bl-xl text-white text-5xl"> 
                     <p className=" border-8 border-white rounded-full w-24 h-24 ml-12 mr-14 mt-10 px-4 py-4">3</p>
@@ -51,6 +53,9 @@ const HomePage = () => {
                         <p className="pt-4"> With our Dietician's help, learn to adopt healthy habits and make lasting changes.</p>
                     </div>
                     <img className="pr-8 pt-8 pb-8 md:w-36 md:h-44 ml-auto" src={Gif} alt="notes_icon" />
+
+                    </div>
+                    </div>
 
       <div className="bg-secondaryPink ">
         <h2 className="font-bold text-4xl pt-16 pb-12">How it Works</h2>
