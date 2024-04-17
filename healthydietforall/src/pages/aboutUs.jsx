@@ -1,75 +1,98 @@
 // import NavbarSection from "../Navbar";
-import Aboutbg from "../assets/images/eyeicon.png";
-import Aboutbg2 from "../assets/images/eyeicon.png";
+
+import aboutbg from "../assets/images/Images/aboutbg.png";
+import aboutbg2 from "../assets/images/Images/aboutbg2.png";
+import dieticianimg from "../assets/images/Dietician-img.png";
 
 const AboutusPage = () => {
+   
+
   return (
     <>
       {/* <NavbarSection /> */}
 
-      <div className=" ">
-        <img src={Aboutbg} alt="Aboutbg" className="  mt-9" />
-        <div className="absolute bottom-0 pt-5 pb-9 pl-72 m-72 top-5 leading-2 text-xs ">
-          <button className=" mt-7 pb-5 rounded-3xl pt-5 border-x-4 font-extrabold border-r-primaryGreen bg-slate-100 text-2xl">
-            About <span className="text-primary">Us</span>
-          </button>
-          <p className="mb-2 font-sans-serif pt-6">
-            Healthy diet for all aims at inspiring and empowering people to make{" "}
-            <br />
-            positive changes to their lifestyle and improve their overall
-            well-being.
-          </p>
-
-          <p className="  ">
-            Our mission is to equip individuals with the knowledge and tools to
-            make <br />
-            informed dietary choices for their long-term well-being and also
-            assist <br />
-            them in bridging the gap between busy lifestyles and healthy eating{" "}
-            <br />
-            habits.
-          </p>
-
+      <div className="">
+        <div className="relative">
           <div>
-            <button className="text-white text-center justify-center text-2xl w-52 rounded-3xl mt-5 bg-primaryOrange pt-3">
+            <img className=" w-lvw h-lvh " src={aboutbg} alt="" />
+          </div>
+
+          <div className="absolute top-[6rem] right-[2.6rem] flex flex-col gap-8 justify-center items-center">
+            <button className="pr-2 text-4xl w-[200px] pt-2 pb-2 bg-white border border-slate-500 rounded-3xl font-extrabold ">
+              About <span className="text-primaryOrange">Us</span>
+            </button>
+            <div className="max-w-[650px] text-left">
+              <p className=" text-xl mb-4">
+                Healthy diet for all aims at inspiring and empowering people to
+                make positive changes to their lifestyle and improve their
+                overall well-being.
+              </p>
+              <p className="text-xl">
+                Our mission is to equip individuals with the knowledge and tools
+                to make informed dietary choices for their long-term well-being
+                and also assist them in bridging the gap between busy lifestyles
+                and healthy eating habits.{" "}
+              </p>
+            </div>
+
+            <button className="bg-primaryOrange  w-52 rounded-2xl ">
               Our Services
             </button>
           </div>
         </div>
-      </div>
-
-      <div>
-        <button className="font-extrabold pt-8 bg-gray-200 w-80 m-5 text-2xl">
-          Know Your <span className="text-primaryOrange pt-9">Dietitian </span>
-        </button>
-      </div>
-
-      <div className="mt-16">
-        <div>
-          <h4>
-            I believe that every person is unique, and so is their relationship
-            with food. That is why I offer personalised nutrition plans{" "}
-          </h4>
-          <p>
-            Pascaline Ukwueze is a registered dietician with over five years of
-            experience in the field of dietetics. She earned her B.Sc. in
-            nutrition and dietetics from the University of Nigeria, Nsukka, and
-            has since worked as a clinical dietician in two hospitals. She’s
-            passionate about helping people to stay healthy while living their
-            best lives through nutrition education, support, and encouragement.
-          </p>
-          <img src="" alt="" />
-        </div>
-      </div>
-
-      <div className="mt-32">
-        <img src={Aboutbg2} alt="Aboutbg2" className="object-cover  mt-9" />
 
         <div>
-          <button className="absolute w-full bottom-0">
-            Join The Thrieving <span>Community</span>
+          <button className="pt-5 mt-9 border border-slate-400 mb-5 bg-slate-100 w-96 font-extrabold text-3xl">
+            Know your <span className="text-primaryOrange">Dietician</span>
           </button>
-          <button>Subscribe</button>
+
+          <div className="border border-primaryGreen m-20 rounded-3xl flex items-center">
+            <div className="flex-1">
+            <h4 className="bg-white pb-16  pt-10">
+              I believe that every person is unique, and so is their
+              relationship with food. That's why I offer personalised
+               nutrition
+              plans{" "}
+            </h4>
+
+            <p className="pt-5 pr-20 border w-[800px] border-slate-400 text-lg">
+              Pascaline Ukwueze is a registered dietician with over five years
+              of experience in the field of dietetics. She earned her B.Sc. in
+              nutrition and dietetics from the University of Nigeria, Nsukka,
+              and has since worked as a clinical dietician in two hospitals.
+              She’s passionate about helping people to stay healthy while living
+              their best lives through 
+              nutrition education, support, and
+              encouragement.
+            </p>
+            </div>
+
+            <div>
+            <img src={dieticianimg} alt="" className="w-[300px]" />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <img className=" w-lvw h-lvh" src={aboutbg2} alt="" />
+
+          <div className=" top-60 pl-20 absolute">
+            <h3 className="mb-8 mt-28 text-4xl font-bold border inline-block border-b-2 border-primaryGreen ">
+              Join The Thriving{" "}
+              <span className="text-primaryOrange">Community</span>
+            </h3>
+
+            <div className="flex mr-32  mb-32">
+              <input
+                type="text"
+                placeholder="Your Email"
+                className="mr-8 ml-32 border border-gray-900 w-full pl-4 "
+              />
+              <button className="bg-primaryOrange text-white w-64 h-12 ">
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

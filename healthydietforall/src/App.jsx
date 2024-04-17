@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import CreateBlog from "./pages/CreateBlog";
 import HomePage from "./pages/Home";
+import ContactPage from "./pages/ContactPage";
+
 
 import SingleBlogPage from "./pages/SingleBlog";
 
@@ -28,6 +30,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/about-us" element={<AboutusPage />} />
+         <Route path="/contact-us" element={<ContactPage />} /> 
         <Route path="/services" element={<Services />} />
         <Route path="/service" element={<ServicePage />} />
         <Route path="/reset-password" element={<ResetPassword />} />
